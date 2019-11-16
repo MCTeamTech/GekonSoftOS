@@ -57,10 +57,9 @@ int cmd = 0;
                         else
                         {
                           Wypisz("Nie mozna otworzyc wiecej cmd...\n");
-                        }
-                        
-                       
-                }
+                        }  
+			
+                 }
 
                 else if (PorStr(znak, "cmdshtdwn\n"))
                   {
@@ -72,11 +71,8 @@ int cmd = 0;
                         else
                         {
                           Wypisz("Nie mozna zamknac wiecej cmd!\n");
-                        }
-                        
-                       
-                }
-
+                        }  
+                  }
 
                 else if(PorStr(znak,"menu\n"))
                 {
@@ -98,9 +94,9 @@ int cmd = 0;
                 else if(PorStr(znak,"pomoc\n"))
                 {
                     Wypisz("\n1. cmd       : Wlacz kolejne okno cmd ");
-          	        Wypisz("\n2. czysc     : Wyczysc cmd ");
-	                  Wypisz("\n3. pomoc     : Wyswietl polecenia GekonSoftOS ");
-	                  Wypisz("\n4. cpukill   : Zakoncz proces odpowiedzialny za wspolprace z prockiem ");
+          	    Wypisz("\n2. czysc     : Wyczysc cmd ");
+	            Wypisz("\n3. pomoc     : Wyswietl polecenia GekonSoftOS ");
+	            Wypisz("\n4. cpukill   : Zakoncz proces odpowiedzialny za wspolprace z prockiem ");
                     Wypisz("\n5. menu      : Uruchom powloke graficzna systemu (w fazie testow). \n");
                 }
 
