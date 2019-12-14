@@ -20,7 +20,7 @@ int cmd = 0;
 
       Wyczysc();
        Wypisz(">>>GekonSoft\tOS!!<<<\n Wpisz komende:\n");
-       while (1)
+       while (1) //Uruchamianie wielu cmd na raz nie jest jeszcze zaimplementowane! Jest to tylko graficzne przedstawienie pomysłu!
        {
          if(cmd == 0)
          {WypiszDwa("\nGeko", "(0)>");}
@@ -97,18 +97,17 @@ int cmd = 0;
           	    Wypisz("\n2. czysc     : Wyczysc cmd ");
 	            Wypisz("\n3. pomoc     : Wyswietl polecenia GekonSoftOS ");
 	            Wypisz("\n4. cpukill   : Zakoncz proces odpowiedzialny za wspolprace z prockiem ");
-                    Wypisz("\n5. menu      : Uruchom powloke graficzna systemu (w fazie testow). \n");
+                    Wypisz("\n5. graphic   : Uruchom powloke graficzna systemu (w fazie testow). \n");
                 }
 
                 else if(PorStr(znak,"cpukill\n"))
                 {
-                      YellowScreenProvoder();
+                      YellowScreen();
                 }
                 
                 else
                 {
-                        Wypisz("\nBledne polecenie = ");
-                        Wypisz(znak);
+                        Wypisz("\nBledne polecenie!");
                 }
        }
 }
