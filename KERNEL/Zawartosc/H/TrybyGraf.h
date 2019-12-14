@@ -120,7 +120,7 @@ void MenuGraficzne()
   }while(keycode > 0);
 }
 
-void Menu() //Przejscie w tryb graficzny dla użytkownika
+void Menu() //Przejscie w tryb graficznego menu
 {
   TrybGraf(BIALY, CZARNY);
   
@@ -134,7 +134,7 @@ void Tabelka() //Przejscie w tryb graficzny dla użytkownika
   Uruchom_Nkl_Graf();
 }
 
-void Graf_Loading() //Załadowanie trybu graficznego dla ładowania systemu
+void Graf_Loading() //Ładowanie graficznie
 {
   TrybGraf(BIALY, CZARNY);
   
@@ -142,11 +142,11 @@ void Graf_Loading() //Załadowanie trybu graficznego dla ładowania systemu
 }
 
 
-void YellowScreenProvoder()
+void YellowScreen()
 {
   TrybGraf(BIALY, CZARNY);
   
-  YellowScreen();
+  YellowScreenA();
 }
 
 #endif
