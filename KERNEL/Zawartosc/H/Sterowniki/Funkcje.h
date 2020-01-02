@@ -10,14 +10,13 @@ void Kursor()
 {
     unsigned temp;
 
-    temp = kursorY * szerokoscS + kursorX;                                                      // Position = (y * width) +  x
-
-    outportb(0x3D4, 14);                                                                // CRT Control Register: Select kursor Location
-    outportb(0x3D5, temp >> 8);                                                         // Send the high byte across the bus
-    outportb(0x3D4, 15);                                                                // CRT Control Register: Select Send Low byte
-    outportb(0x3D5, temp);                                                              // Send the Low byte of the kursor location
+    temp = kursorY * szerokoscS + kursorX;                                                     
+    outportb(0x3D4, 14);                                                                
+    outportb(0x3D5, temp >> 8);                                                         
+    outportb(0x3D4, 15);                                                                
+    outportb(0x3D5, temp);                                                              
 }
-                                                   //We define the screen width, height, and depth.
+                                                   
 void WyczyscLinia(uint8 from,uint8 to)
 {
         uint16 i = szerokoscS * from * sd;
@@ -34,7 +33,7 @@ void Pom(uint8 NumerLinii)
 {
         string PamVid = (string)0xb8000;
         uint16 i = 0;
-        WyczyscLinia(0,NumerLinii-1);                                            //updated
+        WyczyscLinia(0,NumerLinii-1);                                            
         for (i;i<szerokoscS*(wysokoscS-1)*2;i++)
         {
                 PamVid[i] = PamVid[i+szerokoscS*2*NumerLinii];
@@ -174,25 +173,7 @@ void Poczekaj(uint32 czas)
         }
 
 }
-/*
-int color = 0x0F;
 
-void set_screen_color(int text_color,int bg_color)
-{
-	color =  (bg_color << 4) | text_color;;
-}
-void set_screen_color_from_color_code(int color_code)
-{
-	color = color_code;
-}
-void print_colored(string ch,int text_color,int bg_color)
-{
-	int current_color = color;
-	set_screen_color(text_color,bg_color);
-	Wypisz(ch);
-	set_screen_color_from_color_code(current_color);
-}
-*/
 
 
 #endif
