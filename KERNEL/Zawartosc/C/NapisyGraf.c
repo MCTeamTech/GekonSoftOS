@@ -1,7 +1,6 @@
 #include "../H/NapisyGraf.h"
-#include "../H/types.h"
 #include "../H/Definicje.h"
-uint16 WpisGraf(unsigned char ch, uint8 KolorPrzod, uint8 KolorTyl) 
+uint16 WpisGraf(uint8 ch, uint8 KolorPrzod, uint8 KolorTyl) 
 {
   uint16 ax = 0;
   uint8 ah = 0, al = 0;
