@@ -3,7 +3,7 @@
 #include "system.h"
 #include "Sterowniki/Znaki.h"
 #include "Sterowniki/Funkcje.h"
-#include "types.h"
+#include "Definicje.h"
 
 
 void intDochar(int n, char str[]) {          
@@ -17,6 +17,7 @@ void intDochar(int n, char str[]) {
     if (sign < 0) str[i++] = '-';
     str[i] = '\0';
 
+    /* TODO: implement "reverse" */
     return str;
 }
 string intDostring(int n)
