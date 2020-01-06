@@ -3,25 +3,28 @@
 #include "../Definicje.h"
 #include "../system.h"
 #include "../CgZnak.h"
+#include "../Stale.h"
+
 int kursorX = 0, kursorY = 0;
-const uint8 szerokoscS = 80,wysokoscS = 25,sd = 2;  
+const uint8 szerokoscS = 80,wysokoscS = 25,dw = 2;  
 
 void Kursor()
 {
-    unsigned temp;
+    uint32 dane;
 
-    temp = kursorY * szerokoscS + kursorX;                                                     
-    outportb(0x3D4, 14);                                                                
-    outportb(0x3D5, temp >> 8);                                                         
-    outportb(0x3D4, 15);                                                                
-    outportb(0x3D5, temp);                                                              
+    dane = kursorY * szerokoscS + kursorX;                                                      
+
+    Wyjsciep(0x3D4, 14);                                                                
+    Wyjsciep(0x3D5, dane >> 8);                                                         
+    Wyjsciep(0x3D4, 15);                                                                
+    Wyjsciep(0x3D5, dane);                                                              
 }
                                                    
-void WyczyscLinia(uint8 from,uint8 to)
+void WyczyscLinia(uint8 od,uint8 koniec)
 {
-        uint16 i = szerokoscS * from * sd;
-        string PamiecGraf=(string)0xb8000;
-        for(i;i<(szerokoscS*to*sd);i++)
+        uint16 i = szerokoscS * od * dw;
+        string PamiecGraf=(string)ADRES_GRAFIKI;
+        for(i;i<(szerokoscS*koniec*dw);i++)
         {
                 PamiecGraf[i] = 0x0;
         }
@@ -29,9 +32,9 @@ void WyczyscLinia(uint8 from,uint8 to)
 
 
 
-void Pom(uint8 NumerLinii)
+void Pomin(uint8 NumerLinii)
 {
-        string PamVid = (string)0xb8000;
+        string PamVid = (string)ADRES_GRAFIKI;
         uint16 i = 0;
         WyczyscLinia(0,NumerLinii-1);                                            
         for (i;i<szerokoscS*(wysokoscS-1)*2;i++)
@@ -57,20 +60,20 @@ void NowaLiniaSp()
 {
         if(kursorY >=wysokoscS-1)
         {
-                Pom(1);
+                Pomin(1);
         }
 }
 
-void WypiszZnak(char c)
+void WypiszZnak(char z)
 {
-    string RozmGraf = (string) 0xb8000;     
-    switch(c)
+    string RozmGraf = (string) ADRES_GRAFIKI;     
+    switch(z)
     {
         case (0x08):
                 if(kursorX > 0) 
                 {
 	                kursorX--;									
-                        RozmGraf[(kursorY * szerokoscS + kursorX)*sd]=0x00;	                              
+                        RozmGraf[(kursorY * szerokoscS + kursorX)*dw]=0x00;	                              
 	        }
 	        break;
        
@@ -82,8 +85,8 @@ void WypiszZnak(char c)
                 kursorY++;
                 break;
         default:
-                RozmGraf [((kursorY * szerokoscS + kursorX))*sd] = c;
-                RozmGraf [((kursorY * szerokoscS + kursorX))*sd+1] = 0x0F;
+                RozmGraf [((kursorY * szerokoscS + kursorX))*dw] = z;
+                RozmGraf [((kursorY * szerokoscS + kursorX))*dw+1] = 0x0F;
                 kursorX++; 
                 break;
 	
@@ -173,7 +176,6 @@ void Poczekaj(uint32 czas)
         }
 
 }
-
 
 
 #endif
