@@ -1,7 +1,7 @@
 #ifndef AWARIA_H
 #define AWARIA_H
 #include "../H/Sterowniki/Grafika.h"
-void YellowScreenA()
+void YellowScreen()
 {
   //Tekst
   Wypelnienie(0, 0, 0, WYSOKOSCBOX - 100, 78, ZOLTY);
@@ -18,7 +18,7 @@ void YellowScreenA()
   DoLini(1, 20);
   WypiszWKolorze("KOD BLEDU: HLT_ASM_PROC", CZER, ZOLTY);
   //Tekst
-  asm("hlt");
+  asm("hlt"); //Zatrzymanie assemblerowskie
 }
 
 #endif

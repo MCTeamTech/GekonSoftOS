@@ -38,11 +38,10 @@ while(1)
   DoLini(2, 9);
   WypiszWKolorze("Dzialajaca dzieki sterownikowi GEV", J_ZIELON, ZIELON);
 
-   
   DoLini(2, 10);
   WypiszWKolorze("System zostal zaprojektowany i wykonany przez Jakuba Siwca!", J_ZIELON, ZIELON);
   Zaczekaj(10);
-  Funkcja_Glowna();
+
 }
 }
 
@@ -120,7 +119,7 @@ void MenuGraficzne()
   }while(keycode > 0);
 }
 
-void Menu() //Przejscie w tryb graficznego menu
+void Menu() //Przejscie w tryb graficzny dla użytkownika
 {
   TrybGraf(BIALY, CZARNY);
   
@@ -134,7 +133,7 @@ void Tabelka() //Przejscie w tryb graficzny dla użytkownika
   Uruchom_Nkl_Graf();
 }
 
-void Graf_Loading() //Ładowanie graficznie
+void Graf_Loading() //Załadowanie trybu graficznego dla ładowania systemu
 {
   TrybGraf(BIALY, CZARNY);
   
@@ -142,11 +141,11 @@ void Graf_Loading() //Ładowanie graficznie
 }
 
 
-void YellowScreen()
+void YellowScreenG()
 {
   TrybGraf(BIALY, CZARNY);
   
-  YellowScreenA();
+  YellowScreen();
 }
 
 #endif

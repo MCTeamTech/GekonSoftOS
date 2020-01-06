@@ -1,7 +1,7 @@
 #ifndef LADOWANIE_H
 #define LADOWANIE_H
 #include "Sterowniki/Grafika.h"
-#include "types.h"
+#include "Definicje.h"
 void Lad() 
 {
 

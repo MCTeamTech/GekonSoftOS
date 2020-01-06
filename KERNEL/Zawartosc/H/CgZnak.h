@@ -1,7 +1,7 @@
-#ifndef STRING_H
-#define STRING_H
+#ifndef CGZNAK_H
+#define CGZNAK_H
 
-#include "types.h"
+#include "Definicje.h"
 uint16 dlugosc(string ch)
 {
         uint16 i = 1;
@@ -9,7 +9,6 @@ uint16 dlugosc(string ch)
         return --i;
 }
 
-/* Added in episode 3*/ /*This function compares two strings and returns true (1) if they are equal or false (0) if they are not equal */
 
 uint8 PorStr(string ch1,string ch2)                     
 {
