@@ -43,3 +43,4 @@ GDT::Segmenty::Segmenty(uint32 baza, uint32 limit, uint32 wlas)
     else 
 }
 
+//Nie skończone! Zaimplementowanie spowoduje błąd krytyczny i błąd kompilcaji!
