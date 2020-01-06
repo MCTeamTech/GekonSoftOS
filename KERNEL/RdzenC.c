@@ -20,7 +20,7 @@ int cmd = 0;
 
       Wyczysc();
        Wypisz(">>>GekonSoft\tOS!!<<<\n Wpisz komende:\n");
-       while (1) //Uruchamianie wielu cmd na raz nie jest jeszcze zaimplementowane! Jest to tylko graficzne przedstawienie pomysłu!
+       while (1)
        {
          if(cmd == 0)
          {WypiszDwa("\nGeko", "(0)>");}
@@ -34,7 +34,7 @@ int cmd = 0;
                 string znak = Czytaj();
                
            
-                if(PorStr(znak,"graph\n"))
+                if(PorStr(znak,"reset\n"))
                 {
                         Graf_Loading();
                         Wyczysc();
@@ -57,9 +57,10 @@ int cmd = 0;
                         else
                         {
                           Wypisz("Nie mozna otworzyc wiecej cmd...\n");
-                        }  
-			
-                 }
+                        }
+                        
+                       
+                }
 
                 else if (PorStr(znak, "cmdshtdwn\n"))
                   {
@@ -71,8 +72,11 @@ int cmd = 0;
                         else
                         {
                           Wypisz("Nie mozna zamknac wiecej cmd!\n");
-                        }  
-                  }
+                        }
+                        
+                       
+                }
+
 
                 else if(PorStr(znak,"menu\n"))
                 {
@@ -94,20 +98,21 @@ int cmd = 0;
                 else if(PorStr(znak,"pomoc\n"))
                 {
                     Wypisz("\n1. cmd       : Wlacz kolejne okno cmd ");
-          	    Wypisz("\n2. czysc     : Wyczysc cmd ");
+                    Wypisz("\n2. czysc     : Wyczysc cmd ");
 	            Wypisz("\n3. pomoc     : Wyswietl polecenia GekonSoftOS ");
 	            Wypisz("\n4. cpukill   : Zakoncz proces odpowiedzialny za wspolprace z prockiem ");
-                    Wypisz("\n5. graphic   : Uruchom powloke graficzna systemu (w fazie testow). \n");
+                    Wypisz("\n5. menu      : Uruchom powloke graficzna systemu (w fazie testow). \n");
                 }
 
                 else if(PorStr(znak,"cpukill\n"))
                 {
-                      YellowScreen();
+                      YellowScreenG();
                 }
                 
                 else
                 {
-                        Wypisz("\nBledne polecenie!");
+                        Wypisz("\nBledne polecenie = ");
+                        Wypisz(znak);
                 }
        }
 }
