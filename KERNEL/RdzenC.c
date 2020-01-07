@@ -51,7 +51,7 @@ int cmd = 0;
                 {
                         if (cmd <= 1)
                         {
-                          Wypisz("Otwieram noe cmd!\n");
+                          Wypisz("Otwieram nowe cmd!\n");
                           cmd++;
                         }
                         else
