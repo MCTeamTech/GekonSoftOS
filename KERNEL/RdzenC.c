@@ -111,7 +111,7 @@ int cmd = 0;
                 
                 else
                 {
-                        Wypisz("\nBledne polecenie = ");
+                        Wypisz("\nBledne polecenie - ");
                         Wypisz(znak);
                 }
        }
